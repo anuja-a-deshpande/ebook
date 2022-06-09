@@ -2,7 +2,7 @@ import { createBottomTabNavigator } from '@react-navigation/bottom-tabs';
 import Icon from 'react-native-vector-icons/Ionicons';
 import Home from '../Screens/Home'
 import Details from '../Screens/Details';
-import DrawerNav from './DrawerNavigator';
+// import DrawerNav from './DrawerNavigator';
 
 const Tab = createBottomTabNavigator();
 
@@ -35,15 +35,7 @@ export default function MyTabs() {
       })}
       >
       <Tab.Screen name="Home" component={Home} />
-      <Tab.Screen name="Details" component={DrawerNav} 
-      listeners={({ navigation }) => ({
-        tabPress: e => {
-          navigation.dispatch(DrawerActions.openDrawer())
-  
-          e.preventDefault()
-        }
-      })}
-      />
+      <Tab.Screen name="Details" component={Details} />
     </Tab.Navigator>
   );
 }
