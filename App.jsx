@@ -5,6 +5,7 @@ import { AppRegistry, Platform } from 'react-native';
 import { SafeAreaProvider } from 'react-native-safe-area-context';
 import { name as appName } from './app.json';
 import RootNavigator from './src/Navigation/RootNavigator';
+// import DrawerNav from './src/Navigation/DrawerNavigator';
 
 // registerRootComponent calls AppRegistry.registerComponent('main', () => App);
 // It also ensures that whether you load the app in the Expo client or in a native build,

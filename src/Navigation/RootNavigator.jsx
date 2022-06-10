@@ -2,6 +2,7 @@ import * as React from 'react';
 import Home from '../Screens/Home'
 import Details from '../Screens/Details';
 import MyTabs from './BottomTabNavigator';
+// import DrawerNav from './DrawerNavigator';
 import { createNativeStackNavigator } from '@react-navigation/native-stack';
 
 const Stack = createNativeStackNavigator();
@@ -15,6 +16,7 @@ export default function  RootNavigator  () {
       {/* <Stack.Screen name="Home" component={Home} /> */}
       {/* <Stack.Screen name="Details" component={Details} /> */}
       <Stack.Screen name="Tabs" component={MyTabs} />
+      {/* <Stack.Screen name="DrawerNav" component={DrawerNav} /> */}
     </Stack.Navigator>
     )
 }
