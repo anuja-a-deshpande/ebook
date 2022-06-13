@@ -20,7 +20,80 @@ export default class SignUpComponent extends React.Component {
     }
   }
 
-  
+  checkNameValidation(value) {
+    var n = value.length;
+    if (n > 0) {
+      this.setState({
+        isValidUserName: true
+      });
+    }
+    else {
+      this.setState({
+        isValidUserName: false
+      });
+    }
+  }
+
+  checkPhoneValidation(value) {
+    var n = value.length;
+    if (n > 0) {
+      this.setState({
+        isValidPhoneNumber: true
+      });
+    }
+    else {
+      this.setState({
+        isValidPhoneNumber: false
+      });
+    }
+  }
+
+  checkEmailValidation(value) {
+
+    this.state.email = value;
+
+    var n = value.length;
+    if (n > 4 && value.includes("@") && value.includes(".")) {
+      this.setState({
+        isValidEmail: true
+      });
+    }
+    else {
+      this.setState({
+        isValidEmail: false
+      });
+    }
+  }
+
+  checkPasswordValidation(value) {
+    var n = value.length;
+    if (n > 9) {
+      this.setState({
+        isValidPassword: true
+      });
+    }
+    else {
+      this.setState({
+        isValidPassword: false
+      });
+    }
+  }
+
+  makeSecurePassword() {
+    this.setState({
+      secureTextEntry: !this.state.secureTextEntry
+    })
+  }
+
+  signUpUser(email, password){
+    try{
+      this.props.navigation.navigate("Tabs") 
+    }
+    catch(error){
+      console.log(error.toString());
+      alert("There's an error with your email !");
+    }
+  }
 
   render() {
     return (
